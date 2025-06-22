@@ -1,0 +1,88 @@
+[project]
+name = "xara_mesh"
+version = "0.0.2"
+authors = [
+  {name="Wensley Rushing", email="50180406+wensley-rushing@users.noreply.github.com"},
+]
+description="Meshing utilities for xara."
+
+#license = {file = ".github/LICENSE.txt"}
+readme = "README.md"
+
+keywords = [
+  "pre-processing",
+  "finite-element-analysis",
+  "xara",
+  "opensees",
+  "openseespy",
+  "meshing",
+  "2D",
+] 
+
+dependencies = [
+  "opensees",
+
+  "pyyaml",
+  "scipy",
+  "numpy",
+  "npx",
+
+# "trimesh",
+  "xara",
+  "matplotlib",
+  "shps>=0.0.26"
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    'Programming Language :: C',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3 :: Only',
+    'Topic :: Software Development',
+    'Topic :: Scientific/Engineering',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+]
+
+
+[project.urls]
+Repository = "https://github.com/wensley-rushing/"
+
+[project.scripts]
+xara_mesh = "xara_mesh.__main__:main"
+
+[build-system]
+requires = ["scikit-build-core>=0.9", "pybind11_stubgen"]        # pybind stubgen just prevents a warning
+build-backend = "scikit_build_core.build"
+# requires = [
+#     "setuptools >= 52.0.2",
+# ]
+
+# build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.scikit-build]
+wheel.packages = ["xara_mesh"]
+
+#package-dir = {"" = "src"}              # root of src layout
+#install-components = ["python", "triangle_lib"]
+#wheel.py-api = "py3"
+#wheel.plat-name = "auto"                # platform-tagged wheel
+
+#[tool.scikit-build.components.triangle_lib]
+#install-dir = "xara_mesh/schewchuk"
+
+
+
